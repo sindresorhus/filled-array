@@ -17,6 +17,9 @@ const filledArray = require('filled-array');
 
 filledArray('x', 3);
 //=> ['x', 'x', 'x']
+
+filledArray(0, 3);
+//=> [0, 0, 0]
 ```
 
 
