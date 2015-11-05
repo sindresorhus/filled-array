@@ -1,13 +1,13 @@
 import test from 'ava';
 import fn from './';
 
+function indexPlus(index) {
+	return index + 1;
+}
+
 function fizzBuzz(index) {
 	// https://gist.github.com/jaysonrowe/1592432#gistcomment-882551
 	return (++index % 3 ? '' : 'Fizz') + (index % 5 ? '' : 'Buzz') || index;
-}
-
-function indexPlus(index) {
-	return index + 1;
 }
 
 function comprehensive(index, length, partial) {
