@@ -8,5 +8,6 @@ test(t => {
 	t.same(fn('a', 5), ['a', 'a', 'a', 'a', 'a']);
 	t.same(fn('foo', 2), ['foo', 'foo']);
 	t.same(fn(0, 2), [0, 0]);
+	t.same(fn(function (index) { return index + 1 }, 3), [1, 2, 3]);
 	t.end();
 });
