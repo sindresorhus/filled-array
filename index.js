@@ -8,7 +8,7 @@ module.exports = function (item, n) {
 	}
 
 	for (var i = 0; i < n; i++) {
-		ret[i] = isCb ? item(i, ret, n) : item;
+		ret[i] = isCb ? item(i, n, ret) : item;
 	}
 
 	return ret;
