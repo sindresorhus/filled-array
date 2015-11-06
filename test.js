@@ -11,7 +11,7 @@ function fizzBuzz(index) {
 }
 
 function comprehensive(index, length, partial) {
-	return partial.indexOf(index) >= 0 ? length : index + 1;
+	return partial.includes(index) ? length : index + 1;
 }
 
 test(t => {
