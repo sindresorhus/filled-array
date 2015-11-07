@@ -20,6 +20,12 @@ filledArray('x', 3);
 
 filledArray(0, 3);
 //=> [0, 0, 0]
+
+filledArray(function (index) {
+	// https://gist.github.com/jaysonrowe/1592432#gistcomment-882551
+	return (++index % 3 ? '' : 'Fizz') + (index % 5 ? '' : 'Buzz') || index;
+}, 15);
+//=> [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']
 ```
 
 
