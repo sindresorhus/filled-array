@@ -1,4 +1,4 @@
-# filled-array [![Build Status](https://travis-ci.org/sindresorhus/filled-array.svg?branch=master)](https://travis-ci.org/sindresorhus/filled-array)
+# filled-array
 
 > Returns an array filled with the specified input
 
