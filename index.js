@@ -1,15 +1,14 @@
-'use strict';
-module.exports = function (item, n) {
-	var ret = new Array(n);
-	var isFn = typeof item === 'function';
+export default function filledArray(fillValue, count) {
+	const returnValue = Array.from({length: count});
+	const isFunction = typeof fillValue === 'function';
 
-	if (!isFn && typeof ret.fill === 'function') {
-		return ret.fill(item);
+	if (!isFunction) {
+		return returnValue.fill(fillValue);
 	}
 
-	for (var i = 0; i < n; i++) {
-		ret[i] = isFn ? item(i, n, ret) : item;
+	for (let index = 0; index < count; index++) {
+		returnValue[index] = isFunction ? fillValue(index, count, returnValue) : fillValue;
 	}
 
-	return ret;
-};
+	return returnValue;
+}

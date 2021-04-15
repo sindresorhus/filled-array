@@ -2,18 +2,16 @@
 
 > Returns an array filled with the specified input
 
-
 ## Install
 
 ```
-$ npm install --save filled-array
+$ npm install filled-array
 ```
-
 
 ## Usage
 
 ```js
-const filledArray = require('filled-array');
+import filledArray from 'filled-array';
 
 filledArray('x', 3);
 //=> ['x', 'x', 'x']
@@ -21,20 +19,19 @@ filledArray('x', 3);
 filledArray(0, 3);
 //=> [0, 0, 0]
 
-filledArray(i => {
-	return (++i % 3 ? '' : 'Fizz') + (i % 5 ? '' : 'Buzz') || i;
+filledArray(index => {
+	return (++index % 3 ? '' : 'Fizz') + (index % 5 ? '' : 'Buzz') || index;
 }, 15);
 //=> [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']
 ```
 
-
 ## API
 
-### filledArray(filler, count)
+### filledArray(fillValue, count)
 
-#### filler
+#### fillValue
 
-Type: Any
+Type: `unknown`
 
 Value to fill the array with.
 
@@ -45,8 +42,3 @@ You can pass a function to generate the array items dynamically. The function is
 Type: `number`
 
 Number of items to fill the array with.
-
-
-## License
-
-MIT © [Sindre Sorhus](http://sindresorhus.com)

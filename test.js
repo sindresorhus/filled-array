@@ -1,5 +1,5 @@
 import test from 'ava';
-import fn from './';
+import filledArray from './index.js';
 
 function indexPlus(index) {
 	return index + 1;
@@ -10,20 +10,20 @@ function fizzBuzz(index) {
 }
 
 function comprehensive(index, length, partial) {
-	return partial.indexOf(index) === -1 ? index + 1 : length;
+	return partial.includes(index) ? length : index + 1;
 }
 
-test(t => {
-	t.deepEqual(fn('a', 0), []);
-	t.deepEqual(fn('a', 1), ['a']);
-	t.deepEqual(fn('a', 2), ['a', 'a']);
-	t.deepEqual(fn('a', 5), ['a', 'a', 'a', 'a', 'a']);
-	t.deepEqual(fn('foo', 2), ['foo', 'foo']);
-	t.deepEqual(fn(0, 2), [0, 0]);
-	t.deepEqual(fn(indexPlus, 5), [1, 2, 3, 4, 5]);
+test('main', t => {
+	t.deepEqual(filledArray('a', 0), []);
+	t.deepEqual(filledArray('a', 1), ['a']);
+	t.deepEqual(filledArray('a', 2), ['a', 'a']);
+	t.deepEqual(filledArray('a', 5), ['a', 'a', 'a', 'a', 'a']);
+	t.deepEqual(filledArray('foo', 2), ['foo', 'foo']);
+	t.deepEqual(filledArray(0, 2), [0, 0]);
+	t.deepEqual(filledArray(indexPlus, 5), [1, 2, 3, 4, 5]);
 	t.deepEqual(
-		fn(fizzBuzz, 15),
+		filledArray(fizzBuzz, 15),
 		[1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']
 	);
-	t.deepEqual(fn(comprehensive, 5), [1, 5, 3, 5, 5]);
+	t.deepEqual(filledArray(comprehensive, 5), [1, 5, 3, 5, 5]);
 });
