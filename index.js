@@ -1,14 +1,26 @@
-export default function filledArray(fillValue, count) {
-	const returnValue = Array.from({length: count});
-	const isFunction = typeof fillValue === 'function';
+module.exports = (fillValue = "no-fill", count = 1) => {
+  if (Number.isNaN(count) || typeof count !== "number") {
+    throw new Error("Second Argument 'count', needs to be a number type");
+  }
+  else if (!fillValue) {
+    throw new Error ("First Argument 'fillValue' needs to be a truthy value");
+  }
+  else {
+    /* what I'm suggesting is that we just return one variable, just one in this space */
+    let resultArray = Array.from({length: count});
 
-	if (!isFunction) {
-		return returnValue.fill(fillValue);
-	}
+    /* if not a function then just perform this action */
+    if (typeof fillValue !== "function") {
+      resultArray = resultArray.fill(fillValue);
+    }
+    /* if you are here, then we'll assume that this is a function */
+    else {
+      for (let i = 0; i < count; ++i) {
+        resultArray[i] = fillValue(i, count, resultArray);
+      }
+    }
 
-	for (let index = 0; index < count; index++) {
-		returnValue[index] = isFunction ? fillValue(index, count, returnValue) : fillValue;
-	}
-
-	return returnValue;
-}
+    /* return to caller */
+    return resultArray;
+  }
+};
