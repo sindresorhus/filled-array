@@ -23,7 +23,7 @@ test('main', t => {
 	t.deepEqual(filledArray(indexPlus, 5), [1, 2, 3, 4, 5]);
 	t.deepEqual(
 		filledArray(fizzBuzz, 15),
-		[1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']
+		[1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz'],
 	);
 	t.deepEqual(filledArray(comprehensive, 5), [1, 5, 3, 5, 5]);
 });
