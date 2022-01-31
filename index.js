@@ -11,7 +11,7 @@ export default function filledArray(fillValue, count) {
 	}
 
 	for (let index = 0; index < count; index++) {
-		returnValue[index] = isFunction ? fillValue(index, count, returnValue) : fillValue;
+		returnValue[index] = fillValue(index, count, returnValue);
 	}
 
 	return returnValue;
