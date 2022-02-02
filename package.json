@@ -1,6 +1,6 @@
 {
 	"name": "filled-array",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"description": "Returns an array filled with the specified input",
 	"license": "MIT",
 	"repository": "sindresorhus/filled-array",
@@ -19,9 +19,9 @@
 		"test": "xo && ava && tsd"
 	},
 	"files": [
- 		"index.js",
+		"index.js",
 		"index.d.ts"
- 	],
+	],
 	"keywords": [
 		"array",
 		"elements",
