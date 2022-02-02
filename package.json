@@ -16,11 +16,8 @@
 		"node": ">=12"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava && tsd"
 	},
-	"files": [
-		"index.js"
-	],
 	"keywords": [
 		"array",
 		"elements",
@@ -33,6 +30,7 @@
 	],
 	"devDependencies": {
 		"ava": "^4.0.0",
+		"tsd": "^0.19.1",
 		"xo": "^0.47.0"
 	}
 }
