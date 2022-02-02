@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import filledArray from '.';
+import filledArray from './index.js';
 
 expectType<string[]>(filledArray('x', 3));
 expectType<number[]>(filledArray(0, 3));
