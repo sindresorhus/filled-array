@@ -18,6 +18,10 @@
 	"scripts": {
 		"test": "xo && ava && tsd"
 	},
+	"files": [
+ 		"index.js",
+		"index.d.ts"
+ 	],
 	"keywords": [
 		"array",
 		"elements",
